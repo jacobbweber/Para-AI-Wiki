@@ -1,0 +1,29 @@
+# ============================================================================
+#  The Library — sync / version-control ignore list
+#  Keep volatile, machine-local, and regenerable files OUT of sync & git.
+#  These are the files most likely to cause cloud-sync race conditions.
+# ============================================================================
+
+# Maintenance scratch (regenerated every run): reports, index, run lock.
+.maintenance/
+
+# Single-instance write lock (also lives in .maintenance, listed for safety).
+.lock
+
+# Atomic-write temp files (exist for milliseconds during a write).
+.smtmp_*
+*.tmp
+
+# Google Drive's own upload staging folder.
+.tmp.driveupload/
+
+# Obsidian per-machine UI state (safe to ignore; not knowledge content).
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.trash/
+
+# OS cruft
+.DS_Store
+Thumbs.db
+desktop.ini
